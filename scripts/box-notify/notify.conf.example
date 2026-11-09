@@ -1,0 +1,21 @@
+# ===== E900V22C notification config =====
+# Copy to /root/notify.conf on the box (chmod 600) and fill in your values.
+
+# ---- Channel 1: WeCom (WeChat Work) group bot webhook ----
+# In WeCom: group settings -> Group Robot -> add robot -> copy webhook URL
+# (The key in the URL equals a push password - anyone holding it can post to your group.)
+WEBHOOK_TYPE=wecom
+WEBHOOK_URL=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY_HERE
+
+# ---- Channel 2: pushplus (optional; requires wechat official-account follow) ----
+PUSHPLUS_TOKEN=
+
+# ---- AdGuard Home admin (daily report reads stats via API) ----
+AGH_USER=admin
+AGH_PASS=YOUR_AGH_PASSWORD
+
+# ---- Alert thresholds ----
+TEMP_MAX=75      # degC
+LOAD_MAX=3.5     # 5-min load
+DISK_MAX=90      # percent used on /
+MEM_MIN=150      # MB available
